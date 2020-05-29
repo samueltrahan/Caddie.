@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "dev": "./node_modules/.bin/nodemon ./bin/www",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "http-errors": "~1.6.3",
     "mongoose": "^5.9.16",
     "morgan": "~1.9.1",
+    "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-google-oauth": "^2.0.0"
   }
