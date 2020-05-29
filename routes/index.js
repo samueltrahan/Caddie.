@@ -6,7 +6,7 @@ router.get('/', function(req, res) {
   res.redirect('/users');
 });
 
-router.get('/auth/google', passport.authenticate (
+router.get('/auth/google', passport.authenticate(
   'google',
   {scope: ['profile', 'email']}
 ));
