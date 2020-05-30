@@ -5,23 +5,24 @@ body {
 }
 
 .heading {
+  color: white;
+  font-size: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 250px;
-
+  font-family: 'Bebas Neue', cursive;
 }
 
-.ball {
-  height: 100px;
+#ball {
+  height: 200px;
 }
 
-#caddie-bag {
-  height: 90px;
+.caddie-bag {
+  height: 150px;
 }
 
 #navigation {
-  height: 100px;
+  height: 150px;
   background-color: rgb(177, 63, 63);
 }
-

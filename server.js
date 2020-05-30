@@ -6,7 +6,6 @@ var logger = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
 
-
 require('dotenv').config();
 require('./config/database');
 require('./config/passport');
@@ -25,7 +24,9 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
@@ -41,7 +42,7 @@ app.use('/users', usersRouter);
 app.use('/courses', coursesRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res) {
+app.use(function (req, res) {
   res.status(404).send("Can't find that!")
 });
 
