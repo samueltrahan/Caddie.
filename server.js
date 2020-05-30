@@ -12,6 +12,7 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
+const coursesRouter = require('./routes/courses');
 var usersRouter = require('./routes/users');
 
 
@@ -37,6 +38,7 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/course', coursesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res) {

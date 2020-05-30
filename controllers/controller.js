@@ -5,15 +5,12 @@ module.exports = {
     courseQuery,
 }
 
-function caddieQuery(req, res, next) {
-    let zipcode = '';
-    axios.get(`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?query=golf+courses+${zipCode}&${CADDIE_API_KEY}`)
-    .then(response => {
+function courseQuery(req, res) {
+    let zipCode = '';
+    axios.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=golf+courses&key=AIzaSyC9AzVdKCvnShvQSWjBHyuxqTHYa2fFuDk}`, ).then(response => {
+        console.log(response);
         res.render('courses/index', {
             results: response.data
-        });
-    })
-    .catch(error => {
-        console.log(error);
+        })
     })
 }
