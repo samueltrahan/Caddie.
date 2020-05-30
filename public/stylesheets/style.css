@@ -1,8 +1,27 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #5D8AA8;
 }
 
-a {
-  color: #00B7FF;
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 250px;
+
 }
+
+.ball {
+  height: 100px;
+}
+
+#caddie-bag {
+  height: 90px;
+}
+
+#navigation {
+  height: 100px;
+  background-color: rgb(177, 63, 63);
+}
+

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Users</title>
+    <title>Caddie</title>
     <!-- Google Icon Fonts used by Materialize -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Materialize CSS Framework -->
@@ -13,11 +13,14 @@
 </head>
 
 <body>
-    <div class="navbar-fixed">
-        <nav>
+    <div class="navbar-wrapper">
+        <nav id="navigation">
             <div class="nav-wrapper">
-                <a href="" class="brand-logo left">Users</a>
-                <ul class="right">
+                <img id="caddie-bag" src="/images/caddie-bag.png" class="brand-logo left">
+
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="/show">My Courses</a></li>
+                    <li><a href="/courses">Search</a></li>
                     <li>
                         <% if (user) { %>
                         <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
@@ -30,5 +33,10 @@
         </nav>
     </div>
 </body>
+<td>
+    <h1 class="heading">Caddie
+        <img src='/images/caddie-ball.png' class='ball'>
+    </h1>
+</td>
 
 </html>

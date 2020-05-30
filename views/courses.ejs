@@ -1,0 +1,10 @@
+<%- include('./partials/base') %>
+
+<h1>Golf Course Search</h1>
+<form action="/courseapi/query" method="POST">
+    <input type="text" name="courses" />
+    <button type="submit">Search Golf Courses</button>
+</form>
+
+
+<%- include('./partials/footer') %>
