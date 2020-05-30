@@ -7,7 +7,7 @@ module.exports = {
 
 function courseQuery(req, res) {
     let zipCode = '';
-    axios.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=golf+courses&key=AIzaSyC9AzVdKCvnShvQSWjBHyuxqTHYa2fFuDk}`, ).then(response => {
+    axios.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=golf+courses&key=${CADDIE_API_KEY}}`, ).then(response => {
         console.log(response);
         res.render('courses/index', {
             results: response.data
