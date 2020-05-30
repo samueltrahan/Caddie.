@@ -8,12 +8,12 @@ router.get("/", function (req, res) {
   });
 });
 
-router.get("/api", (req, res) => {
+router.get("/api", async (req, res) => {
   const query = req.query
-  const googleAPIresponse = Ctrl.courseQuery(query).then(response => {
-    console.log(response)
-    return response
-  });
+  const places = await Ctrl.courseQuery(query);
+  places.results.forEach((place) => {
+    console.log(place.name)
+  })
   res.render("courses", {
     courses: null,
   })
