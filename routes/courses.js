@@ -8,10 +8,19 @@ router.get("/", function (req, res) {
   });
 });
 
-router.get("/api", courseCtrl.courseQuery)
-router.post('/save', courseCtrl.saveCourse);
-router.get('/courselist', courseCtrl.courseDetails);
+router.get("/api", isLoggedIn, courseCtrl.courseQuery)
+router.post('/save', isLoggedIn, courseCtrl.saveCourse);
+router.get('/show', isLoggedIn, courseCtrl.courseDetails);
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  } else {
+    res.redirect('/auth/google')
+  }
+}
 
 // router.post('/courseapi/query', Ctrl.courseQuery);
+
 
 module.exports = router;

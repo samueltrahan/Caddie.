@@ -65,7 +65,7 @@ function courseDetails(req, res) {
           id: place.id
         }
       });
-      res.render('golf/courselist', {
+      res.render('courselist', {
         courses: courseDetails
       })
     })

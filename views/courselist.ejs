@@ -1,0 +1,16 @@
+<%- include('../partials/base') %>
+
+<h1>My Courses</h1>
+
+<% if(!courses) { %>
+<h2>No Courses Yet</h2>
+<%} else { %>
+
+<%courses.forEach(function(course) { %>
+<ul>
+    <li><%= course.name%></li>
+</ul>
+<%  }) %>
+<%} %>
+
+<%- include('../partials/footer') %>
