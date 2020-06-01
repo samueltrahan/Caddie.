@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Ctrl = require("../controllers/controller");
+const courseCtrl = require("../controllers/courses");
 
 router.get("/", function (req, res) {
   res.render("courses", {
@@ -8,8 +8,9 @@ router.get("/", function (req, res) {
   });
 });
 
-router.get("/api", Ctrl.courseQuery)
-router.post('/save', Ctrl.save);
+router.get("/api", courseCtrl.courseQuery)
+router.post('/save', courseCtrl.saveCourse);
+router.get('/courselist', courseCtrl.courseDetails);
 
 // router.post('/courseapi/query', Ctrl.courseQuery);
 
