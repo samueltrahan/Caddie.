@@ -31,8 +31,11 @@ function courseQuery(req, res) {
 }
 
 function save(req, res) {
-  const course = new Course({ id: req.body.courseId });
-  course.save(function (err) {
+    
+    const courseId = req.body.courseId;
+    const userId = req.body.userId;
+  const user = new User({ id: req.body.courseId });
+  user.save(function (err) {
     return res.render("courses", {
       courses: [],
     });

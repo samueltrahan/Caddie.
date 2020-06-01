@@ -6,7 +6,15 @@
   <button type="submit">Search Golf Courses</button>
 </form>
 
-<% if(!courses) { %>
+<% if(!user) { %>
+<h1>not User</h1>
+<% } else { %>
+<h1>user</h1>
+
+<br />
+<br />
+
+<%} %> <% if(!courses) { %>
 <h1>Search Courses</h1>
 <%} else { %>
 <ul>
