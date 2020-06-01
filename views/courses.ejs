@@ -6,5 +6,19 @@
     <button type="submit">Search Golf Courses</button>
 </form>
 
+<% if(!courses) { %>
+<h1>Search Courses</h1>
+<%} else { %>
+<ul>
+    <% courses.forEach(function(course) { %>
+    <li>
+        <%= course.name %>
+        <button>Favorite</button>
+        <br>
+        <%= course.address %>
+    </li>
+    <% }) %>
+</ul>
+<%} %>
 
 <%- include('./partials/footer') %>

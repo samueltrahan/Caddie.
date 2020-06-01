@@ -8,16 +8,7 @@ router.get("/", function (req, res) {
   });
 });
 
-router.get("/api", async (req, res) => {
-  const query = req.query
-  const places = await Ctrl.courseQuery(query);
-  places.results.forEach((place) => {
-    console.log(place.name)
-  })
-  res.render("courses", {
-    courses: null,
-  })
-});
+router.get("/api", Ctrl.courseQuery)
 
 // router.post('/courseapi/query', Ctrl.courseQuery);
 

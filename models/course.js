@@ -10,13 +10,9 @@ const reviewSchema = new Schema({
 });
 
 const courseSchema = new Schema({
-    api_id: {
+    id:{
         type: String,
-        required: true
     },
-    name: String,
-    address: String,
-    img: String,
     reviews: [reviewSchema]
 }, {
     timestamps: true
