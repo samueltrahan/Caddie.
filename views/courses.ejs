@@ -2,23 +2,25 @@
 
 <h1>Golf Course Search</h1>
 <form action="/courses/api" method="GET">
-    <input type="text" name="courses" />
-    <button type="submit">Search Golf Courses</button>
+  <input type="text" name="courses" />
+  <button type="submit">Search Golf Courses</button>
 </form>
 
 <% if(!courses) { %>
 <h1>Search Courses</h1>
 <%} else { %>
 <ul>
-    <% courses.forEach(function(course) { %>
-    <li>
-        <%= course.name %>
-        <button>Favorite</button>
-        <br>
-        <%= course.address %>
-    </li>
-    <% }) %>
+  <% courses.forEach(function(course) { %>
+  <li>
+    <%= course.name %>
+    <br />
+    <%= course.address %>
+    <form action="/courses/save" method="POST">
+      <button type="submit" value="<%= course.id %>" name="courseId">
+        Favorite
+      </button>
+    </form>
+  </li>
+  <% }) %>
 </ul>
-<%} %>
-
-<%- include('./partials/footer') %>
+<%} %> <%- include('./partials/footer') %>

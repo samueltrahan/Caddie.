@@ -9,6 +9,7 @@ router.get("/", function (req, res) {
 });
 
 router.get("/api", Ctrl.courseQuery)
+router.post('/save', Ctrl.save);
 
 // router.post('/courseapi/query', Ctrl.courseQuery);
 
