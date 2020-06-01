@@ -1,34 +1,30 @@
 <%- include('./partials/base') %>
 
+<a href="/">Home</a>
+
 <h1>Golf Course Search</h1>
 <form action="/courses/api" method="GET">
-  <input type="text" name="courses" />
-  <button type="submit">Search Golf Courses</button>
+    <input type="text" name="courses" />
+    <button type="submit">Search Golf Courses</button>
 </form>
 
-<% if(!user) { %>
-<h1>not User</h1>
-<% } else { %>
-<h1>user</h1>
 
-<br />
-<br />
 
-<%} %> <% if(!courses) { %>
+<% if(!courses) { %>
 <h1>Search Courses</h1>
 <%} else { %>
 <ul>
-  <% courses.forEach(function(course) { %>
-  <li>
-    <%= course.name %>
-    <br />
-    <%= course.address %>
-    <form action="/courses/save" method="POST">
-      <button type="submit" value="<%= course.id %>" name="courseId">
-        Favorite
-      </button>
-    </form>
-  </li>
-  <% }) %>
+    <% courses.forEach(function(course) { %>
+    <li>
+        <%= course.name %>
+        <br />
+        <%= course.address %>
+        <form action="/courses/save" method="POST">
+            <button type="submit" value="<%= course.id %>" name="courseId">
+                Favorite
+            </button>
+        </form>
+    </li>
+    <% }) %>
 </ul>
 <%} %> <%- include('./partials/footer') %>

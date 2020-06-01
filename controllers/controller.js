@@ -4,7 +4,7 @@ const User = require("../models/user");
 
 module.exports = {
   courseQuery,
-  save,
+  //save,
 };
 
 function courseQuery(req, res) {
@@ -30,14 +30,14 @@ function courseQuery(req, res) {
     });
 }
 
-function save(req, res) {
-    
-    const courseId = req.body.courseId;
-    const userId = req.body.userId;
-  const user = new User({ id: req.body.courseId });
-  user.save(function (err) {
-    return res.render("courses", {
-      courses: [],
-    });
-  });
-}
+// function save(req, res) {
+
+//     const courseId = req.body.courseId;
+//     const userId = req.body.userId;
+//   const user = new User({ id: req.body.courseId });
+//   user.save(function (err) {
+//     return res.render("courses", {
+//       courses: [],
+//     });
+//   });
+// }
