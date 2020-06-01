@@ -1,10 +1,11 @@
 const axios = require("axios");
 const CADDIE_API_KEY = process.env.CADDIE_API_KEY;
 const User = require("../models/user");
+const Course = require('../models/course');
 
 module.exports = {
   courseQuery,
-  //save,
+  save,
 };
 
 function courseQuery(req, res) {
@@ -30,14 +31,24 @@ function courseQuery(req, res) {
     });
 }
 
-// function save(req, res) {
+function save(req, res) {
+  const parsedData = JSON.parse(req.body.courseToSave);
+  const user = parsedData.user;
+  const courseId = parsedData.courseId;
 
-//     const courseId = req.body.courseId;
-//     const userId = req.body.userId;
-//   const user = new User({ id: req.body.courseId });
-//   user.save(function (err) {
-//     return res.render("courses", {
-//       courses: [],
-//     });
-//   });
-// }
+  const newCourse = new Course({
+    id: courseId
+  })
+  const updatedUser = new User({
+    ...user,
+    courses: [...user.courses, newCourse]
+  });
+
+  User.update({
+    _id: user._id
+  }, updatedUser, function (err, raw) {
+    if (!err) {
+      res.redirect('/courses');
+    }
+  })
+}
