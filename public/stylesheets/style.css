@@ -7,22 +7,28 @@
 }
 
 .heading {
-  color: white;
+  color: gold;
+  text-shadow: 4px 4px 4px black;
   font-size: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 250px;
+  margin-top: 200px;
   font-family: 'Bebas Neue', cursive;
 }
 
-#ball {
-  height: 200px;
+.login {
+  color: gold;
+  font-size: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+  font-family: 'Bebas Neue', cursive;
 }
 
-.caddie-bag {
-  height: 150px;
-}
+
+
 
 #navigation {
   height: 150px;

@@ -4,24 +4,33 @@
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Materialize CSS Framework -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <link rel="stylesheet" href="stylesheets/style.css" />
-    <!-- JavaScript for Materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caddie</title>
 </head>
-<nav>
-    <% if (user) { %>
-
-    <a href="/logout">Log Out</a>
-
-    <% } else { %>
-    <a href="/auth/google">Login with Google</a>
-    <% } %>
-    <a href="/courses/search">Search</a>
-    <a href="/courses/">My courses</a>
+<nav navbar navbar-light bg-light>
+    <ul class="nav justify-content-end">
+        <% if (user) { %>
+        <li class="nav-item">
+            <a href="/logout" class="nav-link active">Log Out</a>
+        </li>
+        <li class="nav-item">
+            <% } else { %>
+            <a href="/auth/google" class="nav-link">Login</a>
+            <% } %>
+    </ul>
+    <ul class="nav">
+        <li class="nav-item">
+            <a href="/courses/search" class="mr-4">Search</a>
+        </li>
+        <li class="nav-item">
+            <a href="/courses/">My courses</a>
+        </li>
+    </ul>
 </nav>
 
 <body>

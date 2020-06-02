@@ -68,3 +68,21 @@ function saveCourse(req, res) {
   })
 }
 
+function courseDetails(req, res) {
+  const courseId = parsedData.courseId;
+  axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${courseId}&key=${CADDIE_API_KEY}`)
+    .then((apiResponse => {
+        const courseDetails = apiResponse.results.data.map((place) => {
+          return {
+            name: place.name,
+            address: place.formatted_address
+          }
+        })
+        res.render('/couselist', {
+          courses: courseDetails,
+        })
+      })
+      .catch(error => {
+        console.log(error);
+      }))
+}
