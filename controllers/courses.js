@@ -7,7 +7,21 @@ module.exports = {
   courseQuery,
   saveCourse,
   courseDetails,
+  search,
+  index,
 };
+
+function index(req, res) {
+  res.render('courselist', {
+    courses: null
+  });
+}
+
+function search(req, res) {
+  res.render("courses", {
+    courses: null,
+  });
+}
 
 function courseQuery(req, res) {
   const query = req.query;
@@ -54,22 +68,3 @@ function saveCourse(req, res) {
   })
 }
 
-function courseDetails(req, res) {
-  const query = req.query;
-  axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${query.id}&key=${CADDIE_API_KEY}`)
-    .then(apiResponse => {
-      const courseDetails = apiResponse.data.results.map((place) => {
-        return {
-          name: place.name,
-          address: place.formatted_address,
-          id: place.id
-        }
-      });
-      res.render('courselist', {
-        courses: courseDetails
-      })
-    })
-    .catch(error => {
-      console.log(error);
-    })
-}
