@@ -18,7 +18,7 @@
 }
 
 .login {
-  color: gold;
+  color: rgb(255, 215, 0);
   font-size: 150px;
   display: flex;
   align-items: center;
@@ -27,10 +27,14 @@
   font-family: 'Bebas Neue', cursive;
 }
 
+.nav-item {
+  font-size: 30px;
+}
 
+h1 {
+  align-items: center;
+}
 
-
-#navigation {
-  height: 150px;
-  background-color: rgb(177, 63, 63);
+#background {
+  background-color: cornflowerblue;
 }

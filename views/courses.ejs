@@ -8,13 +8,6 @@
     <button type="submit">Search Golf Courses</button>
 </form>
 
-<% if(user) { %>
-<h1><%= user.name %></h1>
-<% } else {%>
-<h1>no user</h1>
-<% } %>
-
-
 <% if(!courses) { %>
 <h1>Search Courses</h1>
 <%} else { %>
