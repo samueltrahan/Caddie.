@@ -5,23 +5,26 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Address</th>
             <th>Best Score</th>
         </tr>
     </thead>
     <tbody>
         <% courses.forEach(function(course) { %>
-            <tr>
-                <td><%=course.name %></td>
-                <td><%=course.formatted_address %></td>
-                <td><%=course.bestScore %></td>
-                <td>
-                    <form action="/courses/<%= course._id %>/show" method="GET">
+        <tr>
+            <td><%=course.name %></td>
+            <td><%=course.bestScore %></td>
+            <td>
+                <form action="/courses/<%= course._id %>/show" method="GET">
                     <button type="submit">Details</button>
-                    </form>
-                </td>
-            </tr>
-       <% }) %>
+                </form>
+            </td>
+            <td>
+                <form action="/courses/<%= course._id%>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                </form>
+            </td>
+        </tr>
+        <% }) %>
     </tbody>
 </table>
 

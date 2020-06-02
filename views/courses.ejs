@@ -18,7 +18,7 @@
         <br />
         <%= course.address %>
         <form action="/courses/save" method="POST">
-            <button type="submit" value="<%= JSON.stringify({courseId: course.id, user: user}) %>" name="courseToSave">
+            <button type="submit" value="<%= JSON.stringify({courseId: course.id, user: user, name: course.name}) %>" name="courseToSave">
                 Favorite
             </button>
         </form>

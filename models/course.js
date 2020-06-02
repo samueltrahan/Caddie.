@@ -10,8 +10,15 @@ const reviewSchema = new Schema({
 });
 
 const courseSchema = new Schema({
-    id:{
+    courseId:{
         type: String,
+    },
+    name: {
+        type: String
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     },
     reviews: [reviewSchema]
 }, {

@@ -7,7 +7,7 @@ router.get("/api", isLoggedIn, courseCtrl.courseQuery)
 router.post('/save', isLoggedIn, courseCtrl.saveCourse);
 router.get("/", isLoggedIn, courseCtrl.index);
 //router.get('/:id/show', isLoggedIn, courseCtrl.courseDetails);
-//router.get('/show', isLoggedIn, courseCtrl.show);
+
 
 
 

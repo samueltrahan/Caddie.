@@ -13,11 +13,11 @@ module.exports = {
 };
 
 function index(req, res) {
-  User.find({
+  Course.find({
     user: req.user.id
   }, function (err, courses) {
     res.render('courselist', {
-      courses: req.user.courses
+      courses
     })
   })
 }
@@ -65,22 +65,30 @@ function saveCourse(req, res) {
   const parsedData = JSON.parse(req.body.courseToSave);
   const user = parsedData.user;
   const courseId = parsedData.courseId;
+  const courseName = parsedData.name;
 
   const newCourse = new Course({
-    id: courseId
+    courseId: courseId,
+    user: user,
+    name: courseName
   })
-  const updatedUser = new User({
-    ...user,
-    courses: [...user.courses, newCourse]
-  });
-
-  User.update({
-    _id: user._id
-  }, updatedUser, function (err, raw) {
+  newCourse.save(function (err) {
     if (!err) {
       res.redirect('/courses');
     }
   })
+  // const updatedUser = new User({
+  //   ...user,
+  //   courses: [...user.courses, newCourse]
+  // });
+
+  // User.update({
+  //   _id: user._id
+  // }, updatedUser, function (err, raw) {
+  //   if (!err) {
+  //     res.redirect('/courses');
+  //   }
+  // })
 }
 
 
