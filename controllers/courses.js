@@ -6,7 +6,7 @@ const Course = require('../models/course');
 module.exports = {
   courseQuery,
   saveCourse,
-  //courseDetails,
+  courseDetails,
   search,
   index,
 
@@ -28,15 +28,6 @@ function search(req, res) {
   });
 }
 
-// function show(req, res) {
-//   User.find({
-//     user: req.user.courses
-//   }, function (err, courses) {
-//     res.render('courselist', {
-//       courses: user
-//     })
-//   })
-// }
 
 function courseQuery(req, res) {
   const query = req.query;
@@ -74,40 +65,18 @@ function saveCourse(req, res) {
   })
   newCourse.save(function (err) {
     if (!err) {
-      res.redirect('/courses');
+      res.render('courses')
     }
   })
-  // const updatedUser = new User({
-  //   ...user,
-  //   courses: [...user.courses, newCourse]
-  // });
-
-  // User.update({
-  //   _id: user._id
-  // }, updatedUser, function (err, raw) {
-  //   if (!err) {
-  //     res.redirect('/courses');
-  //   }
-  // })
 }
 
 
 
-// function courseDetails(req, res) {
-//   const courseId = parsedData.courseId;
-//   axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${courseId}&key=${CADDIE_API_KEY}`)
-//     .then((apiResponse => {
-//         const courseDetails = apiResponse.results.data.map((place) => {
-//           return {
-//             name: place.name,
-//             address: place.formatted_address
-//           }
-//         })
-//         res.render('/courselist', {
-//           courses: courseDetails,
-//         })
-//       })
-//       .catch(error => {
-//         console.log(error);
-//       }))
-// }
+function courseDetails(req, res) {
+  console.log('who dat')
+//   Course.find({
+//     user: user
+//   }).then(reponse => {
+
+//   })
+ }

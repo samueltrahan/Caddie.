@@ -5,8 +5,8 @@ const courseCtrl = require("../controllers/courses");
 router.get('/search', isLoggedIn, courseCtrl.search);
 router.get("/api", isLoggedIn, courseCtrl.courseQuery)
 router.post('/save', isLoggedIn, courseCtrl.saveCourse);
-router.get("/", isLoggedIn, courseCtrl.index);
-//router.get('/:id/show', isLoggedIn, courseCtrl.courseDetails);
+router.get("/courselist", isLoggedIn, courseCtrl.index);
+router.get('/:id/show', isLoggedIn, courseCtrl.courseDetails);
 
 
 

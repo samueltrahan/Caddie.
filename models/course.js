@@ -20,6 +20,11 @@ const courseSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
+    bestScore: {
+        type: Number,
+        min: 50,
+        max: 130
+    },
     reviews: [reviewSchema]
 }, {
     timestamps: true
