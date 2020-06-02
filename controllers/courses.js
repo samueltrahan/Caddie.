@@ -6,22 +6,37 @@ const Course = require('../models/course');
 module.exports = {
   courseQuery,
   saveCourse,
-  courseDetails,
+  //courseDetails,
   search,
   index,
+
 };
 
 function index(req, res) {
-  res.render('courselist', {
-    courses: null
-  });
+  User.find({
+    user: req.user.id
+  }, function (err, courses) {
+    res.render('courselist', {
+      courses: req.user.courses
+    })
+  })
 }
 
 function search(req, res) {
   res.render("courses", {
-    courses: null,
+    courses: null
   });
 }
+
+// function show(req, res) {
+//   User.find({
+//     user: req.user.courses
+//   }, function (err, courses) {
+//     res.render('courselist', {
+//       courses: user
+//     })
+//   })
+// }
 
 function courseQuery(req, res) {
   const query = req.query;
@@ -68,21 +83,23 @@ function saveCourse(req, res) {
   })
 }
 
-function courseDetails(req, res) {
-  const courseId = parsedData.courseId;
-  axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${courseId}&key=${CADDIE_API_KEY}`)
-    .then((apiResponse => {
-        const courseDetails = apiResponse.results.data.map((place) => {
-          return {
-            name: place.name,
-            address: place.formatted_address
-          }
-        })
-        res.render('/couselist', {
-          courses: courseDetails,
-        })
-      })
-      .catch(error => {
-        console.log(error);
-      }))
-}
+
+
+// function courseDetails(req, res) {
+//   const courseId = parsedData.courseId;
+//   axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${courseId}&key=${CADDIE_API_KEY}`)
+//     .then((apiResponse => {
+//         const courseDetails = apiResponse.results.data.map((place) => {
+//           return {
+//             name: place.name,
+//             address: place.formatted_address
+//           }
+//         })
+//         res.render('/courselist', {
+//           courses: courseDetails,
+//         })
+//       })
+//       .catch(error => {
+//         console.log(error);
+//       }))
+// }

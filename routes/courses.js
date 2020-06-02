@@ -6,7 +6,9 @@ router.get('/search', isLoggedIn, courseCtrl.search);
 router.get("/api", isLoggedIn, courseCtrl.courseQuery)
 router.post('/save', isLoggedIn, courseCtrl.saveCourse);
 router.get("/", isLoggedIn, courseCtrl.index);
-router.get('/show', isLoggedIn, courseCtrl.courseDetails);
+//router.get('/:id/show', isLoggedIn, courseCtrl.courseDetails);
+//router.get('/show', isLoggedIn, courseCtrl.show);
+
 
 
 function isLoggedIn(req, res, next) {

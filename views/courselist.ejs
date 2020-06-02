@@ -1,16 +1,28 @@
 <%- include('./partials/base') %>
 
-<h1 class="header">My Courses</h1>
-
-<% if(!courses) { %>
-<h2>No Courses Yet</h2>
-<%} else { %>
-
-<%courses.forEach(function(course) { %>
-<ul>
-    <li><%= course.name%></li>
-</ul>
-<%  }) %>
-<%} %>
+<h1 class="header"><strong>My Courses</strong></h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Best Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% courses.forEach(function(course) { %>
+            <tr>
+                <td><%=course.name %></td>
+                <td><%=course.formatted_address %></td>
+                <td><%=course.bestScore %></td>
+                <td>
+                    <form action="/courses/<%= course._id %>/show" method="GET">
+                    <button type="submit">Details</button>
+                    </form>
+                </td>
+            </tr>
+       <% }) %>
+    </tbody>
+</table>
 
 <%- include('./partials/footer') %>
