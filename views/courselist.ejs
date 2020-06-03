@@ -9,6 +9,10 @@
         </tr>
     </thead>
     <tbody>
+        <% if(!details) { %>
+        <h2>No Courses Yet</h2>
+        <% } else { %>
+
         <% details.forEach(function(course) { %>
         <tr>
             <div id="course-list">
@@ -28,6 +32,7 @@
                 </td>
         </tr>
         <% }) %>
+        <%}%>
         </div>
     </tbody>
 </table>

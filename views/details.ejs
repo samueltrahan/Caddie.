@@ -1,6 +1,6 @@
 <%- include('./partials/base') %>
 <h1 id="details-heading">Course Details</h1>
-<h2><%=details.photo %></h2>
+
 <br>
 <br>
 <label class="details">Course:
@@ -16,35 +16,8 @@
 </label>
 
 <br><br>
-<h2 id="reviews-heading">Reviews</h2>
-<form id="add-review-form" method="POST" action="/courses/<%= course %>/reviews">
-    <label>Review:</label>
-    <textarea name="content"></textarea>
-    <label>Rating:</label>
-    <select name="rating">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
-    <input type="submit" value="Add Review">
-</form>
-
-<% if(courses.reviews.length) { %>
-    <table>
-        <% course.reviews.forEach(function(c) { %>
-            <tr> 
-                <td><%=c.content %></td>
-                <td><%=c.rating %></td>
-                <td><%=c.createdAt.toLocalDateString() %></td>
-            </tr>
-       <% }) %>
-    </table>
-    <%} else { %>
-        <h5>No Comments Yet</h5>
-    <% } %>
 
 
+<%- include('./reviews') %>
 
 <%- include('./partials/footer') %>

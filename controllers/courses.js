@@ -84,11 +84,18 @@ function courseDetails(req, res) {
         phoneNumber: response.data.result.formatted_phone_number,
         photo: response.data.result.photos_reference
       }
-
-      res.render('details', {
-        details: details,
-        course: course,
-      })
+      Course.findById(
+        course,
+        function (err, results) {
+          if (err) {
+            console.log(err)
+          }
+          res.render('details', {
+            details: details,
+            course: course,
+            courses: results
+          })
+        });
     })
     .catch(error => {
       console.log(error);
@@ -96,7 +103,6 @@ function courseDetails(req, res) {
 }
 
 function deleteCourse(req, res) {
-  console.log('who dat')
   Course.findByIdAndDelete(req.params.id, function (err, course) {
     res.redirect('courselist')
   })

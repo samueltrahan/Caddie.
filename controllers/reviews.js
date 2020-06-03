@@ -6,10 +6,18 @@ module.exports = {
 
 
 function create(req, res) {
+    const detailsAndCourse = JSON.parse(req.body.detailsAndCourse)
+    const details = detailsAndCourse.details;
+    const courseId = detailsAndCourse.course;
     Course.findById(req.params.id, function (err, course) {
         course.reviews.push(req.body);
-        course.save(function (err) {
-            res.redirect(`/courses/${course.id}/details`);
+        course.save(function (err, reviews) {
+            console.log(reviews);
+            res.render('details', {
+                courses: reviews,
+                details,
+                course: courseId
+            })
         })
     })
 
