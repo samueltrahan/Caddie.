@@ -1,6 +1,6 @@
 <%- include('./partials/base') %>
 
-<h1 class="header"><strong>My Courses</strong></h1>
+<h1 id="header"><strong>My Courses</strong></h1>
 <table>
     <thead>
         <tr>
@@ -11,21 +11,23 @@
     <tbody>
         <% courses.forEach(function(course) { %>
         <tr>
-            <td><%=course.name %></td>
-            <td><%=course.bestScore %></td>
-            <td>
-                <form action="/courses/<%= course.id %>/show" method="POST">
-                    <button type="submit" value="<%= JSON.stringify({courseId: course.courseId, user: user}) %>"
-                        name="courseDetails">Details</button>
-                </form>
-            </td>
-            <td>
-                <form action="/courses/<%= course.id%>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                </form>
-            </td>
+            <div id="course-list">
+                <td><%=course.name %></td>
+                <td><%=course.bestScore %></td>
+                <td>
+                    <form action="/courses/<%= course.id %>/show" method="POST">
+                        <button type="submit" value="<%= JSON.stringify({courseId: course.courseId, user: user}) %>"
+                            name="courseDetails">Details</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/courses/<%= course.id%>?_method=DELETE" method="POST">
+                        <button type="submit">X</button>
+                    </form>
+                </td>
         </tr>
         <% }) %>
+        </div>
     </tbody>
 </table>
 

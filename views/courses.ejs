@@ -5,33 +5,33 @@
 <h1 id="golf-search">Golf Course Search</h1>
 
 
-<div class="input-group mb-3">
-    <form action="/courses/api" method="GET">
-        <input class="form-control" type="text" name="courses" placeholder="Enter City..." />
-        <div class="input-group-append">
-            <button class="btn btn-warning" style="background-color: gold" type="submit">Search Golf Courses</button>
-        </div>
-    </form>
-</div>
+
+<form id="search-heading" action="/courses/api" method="GET">
+    <input type="text" name="courses" placeholder="Enter City..." />
+    <button class="btn btn-warning" style="background-color: gold" type="submit">Search Golf Courses</button>
+</form>
 
 
 <% if(!courses) { %>
 <h1 id="search-heading">Search Courses</h1>
 <%} else { %>
-<ul>
+
+<tbody>
     <% courses.forEach(function(course) { %>
-    <li>
-        <%= course.name %>
-        <br />
-        <%= course.address %>
-        <form action="/courses/save" method="POST">
-            <button type="submit"
-                value="<%= JSON.stringify({courseId: course.courseId, user: user, name: course.name}) %>"
-                name="courseToSave">
-                Favorite
-            </button>
-        </form>
-    </li>
+    <tr>
+        <td class="search-results"><%= course.name %></td><br>
+        <td class="search-results"><%= course.address %></td>
+        <td>
+            <form action="/courses/save" method="POST">
+                <button type="submit"
+                    value="<%= JSON.stringify({courseId: course.courseId, user: user, name: course.name}) %>"
+                    name="courseToSave">
+                    Favorite
+                </button>
+            </form>
+        </td>
+    </tr>
     <% }) %>
-</ul>
+</tbody>
+
 <%} %> <%- include('./partials/footer') %>
