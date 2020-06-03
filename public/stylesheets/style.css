@@ -6,10 +6,12 @@
   background-size: cover;
 }
 
+
+
 .heading {
   color: gold;
   text-shadow: 4px 4px 4px black;
-  font-size: 150px;
+  font-size: 170px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,19 +19,19 @@
   font-family: 'Bebas Neue', cursive;
 }
 
-.login {
-  color: rgb(255, 215, 0);
-  font-size: 150px;
+
+body>nav {
+  grid-area: nav;
+  background-color: rgb(155, 160, 161);
+  height: 105px;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
-  margin-top: 200px;
-  font-family: 'Bebas Neue', cursive;
+  padding: 0 20px 0 30px;
+  text-shadow: 1px 1px 1px black;
 }
 
-.nav-item {
-  font-size: 30px;
-}
+
 
 h1 {
   align-items: center;
@@ -37,4 +39,18 @@ h1 {
 
 #background {
   background-color: cornflowerblue;
+}
+
+#golf-search {
+  text-align: center;
+  font-size: 70px;
+  color: gold;
+  text-shadow: 4px 4px 4px black;
+}
+
+
+
+
+#search-heading {
+  text-align: center;
 }

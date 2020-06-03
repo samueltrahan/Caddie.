@@ -2,14 +2,21 @@
 
 
 
-<h1>Golf Course Search</h1>
-<form action="/courses/api" method="GET">
-    <input type="text" name="courses" />
-    <button type="submit">Search Golf Courses</button>
-</form>
+<h1 id="golf-search">Golf Course Search</h1>
+
+
+<div class="input-group mb-3">
+    <form action="/courses/api" method="GET">
+        <input class="form-control" type="text" name="courses" placeholder="Enter City..." />
+        <div class="input-group-append">
+            <button class="btn btn-warning" style="background-color: gold" type="submit">Search Golf Courses</button>
+        </div>
+    </form>
+</div>
+
 
 <% if(!courses) { %>
-<h1>Search Courses</h1>
+<h1 id="search-heading">Search Courses</h1>
 <%} else { %>
 <ul>
     <% courses.forEach(function(course) { %>
@@ -18,7 +25,9 @@
         <br />
         <%= course.address %>
         <form action="/courses/save" method="POST">
-            <button type="submit" value="<%= JSON.stringify({courseId: course.courseId, user: user, name: course.name}) %>" name="courseToSave">
+            <button type="submit"
+                value="<%= JSON.stringify({courseId: course.courseId, user: user, name: course.name}) %>"
+                name="courseToSave">
                 Favorite
             </button>
         </form>
