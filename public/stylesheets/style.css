@@ -93,7 +93,7 @@ table td {
 }
 
 .details {
-  text-align: center;
+  align-items: center;
 }
 
 #reviews-heading {

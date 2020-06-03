@@ -32,19 +32,18 @@
 </form>
 
 <% if(courses.reviews.length) { %>
-<table>
-    <% course.reviews.forEach(function(c) { %>
-    <tr>
-        <td><%=c.content %></td>
-        <td><%=c.rating %></td>
-        <td><%=c.createdAt.toLocalDateString() %></td>
-    </tr>
-    <% }) %>
-</table>
-<%} else { %>
-<h5>No Comments Yet</h5>
-<% } %>
-
+    <table>
+        <% course.reviews.forEach(function(c) { %>
+            <tr> 
+                <td><%=c.content %></td>
+                <td><%=c.rating %></td>
+                <td><%=c.createdAt.toLocalDateString() %></td>
+            </tr>
+       <% }) %>
+    </table>
+    <%} else { %>
+        <h5>No Comments Yet</h5>
+    <% } %>
 
 
 

@@ -87,7 +87,7 @@ function courseDetails(req, res) {
 
       res.render('details', {
         details: details,
-        course: course
+        course: course,
       })
     })
     .catch(error => {
@@ -98,6 +98,6 @@ function courseDetails(req, res) {
 function deleteCourse(req, res) {
   console.log('who dat')
   Course.findByIdAndDelete(req.params.id, function (err, course) {
-    res.redirect('/courselist');
+    res.status(204).send();
   })
 }
