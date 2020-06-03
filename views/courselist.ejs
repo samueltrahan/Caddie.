@@ -9,20 +9,21 @@
         </tr>
     </thead>
     <tbody>
-        <% courses.forEach(function(course) { %>
+        <% details.forEach(function(course) { %>
         <tr>
             <div id="course-list">
                 <td><%=course.name %></td>
                 <td><%=course.bestScore %></td>
                 <td>
-                    <form action="/courses/<%= course.id %>/show" method="POST">
+                    <form action="/courses/<%= course.id %>/details" method="POST">
                         <button type="submit" value="<%= JSON.stringify({courseId: course.courseId, user: user}) %>"
                             name="courseDetails">Details</button>
                     </form>
                 </td>
                 <td>
                     <form action="/courses/<%= course.id%>?_method=DELETE" method="POST">
-                        <button type="submit">X</button>
+                        <button type="submit" value="<%= JSON.stringify({courseId: course.courseId, user: user}) %>"
+                            name="deleteCourse">X</button>
                     </form>
                 </td>
         </tr>

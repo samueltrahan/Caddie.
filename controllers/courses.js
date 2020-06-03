@@ -9,15 +9,15 @@ module.exports = {
   courseDetails,
   search,
   index,
-
+  deleteCourse,
 };
 
 function index(req, res) {
   Course.find({
     user: req.user.id
-  }, function (err, courses) {
+  }, function (err, details) {
     res.render('courselist', {
-      courses
+      details
     })
   })
 }
@@ -65,7 +65,7 @@ function create(req, res) {
   })
   newCourse.save(function (err) {
     if (!err) {
-      res.redirect('search')
+      res.status(204).send();
     }
   })
 }
@@ -73,9 +73,9 @@ function create(req, res) {
 
 
 function courseDetails(req, res) {
+  const course = req.params.id
   const parsedData = JSON.parse(req.body.courseDetails);
   const courseId = parsedData.courseId;
-
   axios.get(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${courseId}&key=${CADDIE_API_KEY}`)
     .then(response => {
       const details = {
@@ -86,10 +86,18 @@ function courseDetails(req, res) {
       }
 
       res.render('details', {
-        courses: details,
+        details: details,
+        course: course
       })
     })
     .catch(error => {
       console.log(error);
     })
+}
+
+function deleteCourse(req, res) {
+  console.log('who dat')
+  Course.findByIdAndDelete(req.params.id, function (err, course) {
+    res.redirect('/courselist');
+  })
 }

@@ -6,7 +6,8 @@ router.get('/search', isLoggedIn, courseCtrl.search);
 router.get("/api", isLoggedIn, courseCtrl.courseQuery)
 router.post('/save', isLoggedIn, courseCtrl.create);
 router.get("/courselist", isLoggedIn, courseCtrl.index);
-router.post('/:id/show', isLoggedIn, courseCtrl.courseDetails);
+router.post('/:id/details', isLoggedIn, courseCtrl.courseDetails);
+router.delete('/:id', isLoggedIn, courseCtrl.deleteCourse);
 
 
 

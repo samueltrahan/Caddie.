@@ -1,23 +1,23 @@
 <%- include('./partials/base') %>
-<h1 id="details-heading">Details</h1>
-<h2><%=courses.photo %></h2>
+<h1 id="details-heading">Course Details</h1>
+<h2><%=details.photo %></h2>
 <br>
 <br>
-<label>Course:
-    <h2><%= courses.name %></h2>
+<label class="details">Course:
+    <h2 class="details"><%= details.name %></h2>
 </label><br>
 <br>
-<label>Address:
-    <h2><%=courses.address %></h2>
+<label class="details">Address:
+    <h2 class="details"><%=details.address %></h2>
 </label><br>
 <br>
-<label>Phone Number:
-    <h2><%= courses.phoneNumber %></h2>
+<label class="details">Phone Number:
+    <h2 class="details"><%= details.phoneNumber %></h2>
 </label>
 
 <br><br>
-<h2>Reviews</h2>
-<form id="add-review-form" method="POST" action="/courses/<%= courses.id %>/reviews">
+<h2 id="reviews-heading">Reviews</h2>
+<form id="add-review-form" method="POST" action="/courses/<%= course %>/reviews">
     <label>Review:</label>
     <textarea name="content"></textarea>
     <label>Rating:</label>
@@ -30,6 +30,21 @@
     </select>
     <input type="submit" value="Add Review">
 </form>
+
+<% if(courses.reviews.length) { %>
+<table>
+    <% course.reviews.forEach(function(c) { %>
+    <tr>
+        <td><%=c.content %></td>
+        <td><%=c.rating %></td>
+        <td><%=c.createdAt.toLocalDateString() %></td>
+    </tr>
+    <% }) %>
+</table>
+<%} else { %>
+<h5>No Comments Yet</h5>
+<% } %>
+
 
 
 
