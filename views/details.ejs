@@ -15,4 +15,42 @@
     <h2><%= courses.phoneNumber %></h2>
 </label>
 
+<br><br>
+<h2>Reviews</h2>
+<form id="add-review-form" method="POST" action="/courses/<%= courses.id %>/reviews">
+    <label>Review:</label>
+    <textarea name="content"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <input type="submit" value="Add Review">
+</form>
+
+<% if (courses.reviews.length) { %>
+<table>
+    <tbody>
+        <% var total = 0 %>
+        <% courses.reviews.forEach(function(course) { %>
+        <% total += course.rating %>
+        <tr>
+            <td><%= course.content %></td>
+            <td><%= course.rating %></td>
+            <td><%= course.createdAt.toLocaleDateString() %></td>
+        </tr>
+        <% }); %>
+        <tr>
+            <td colspan="2"></td>
+            <td><strong><%= (total / course.reviews.length).toFixed(1) %></strong></td>
+        </tr>
+    </tbody>
+</table>
+<% } else { %>
+<h5>No Reviews Yet</h5>
+<% } %>
+
 <%- include('./partials/footer') %>

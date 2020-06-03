@@ -86,7 +86,7 @@ function courseDetails(req, res) {
       }
 
       res.render('details', {
-        courses: details
+        courses: details,
       })
     })
     .catch(error => {
