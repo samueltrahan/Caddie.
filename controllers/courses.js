@@ -98,6 +98,6 @@ function courseDetails(req, res) {
 function deleteCourse(req, res) {
   console.log('who dat')
   Course.findByIdAndDelete(req.params.id, function (err, course) {
-    res.status(204).send();
+    res.redirect('courselist')
   })
 }
