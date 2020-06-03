@@ -5,7 +5,7 @@ const Course = require('../models/course');
 
 module.exports = {
   courseQuery,
-  saveCourse,
+  create,
   courseDetails,
   search,
   index,
@@ -40,7 +40,7 @@ function courseQuery(req, res) {
         return {
           name: place.name,
           address: place.formatted_address,
-          id: place.id,
+          courseId: place.place_id,
         };
       });
       res.render("courses", {
@@ -52,7 +52,7 @@ function courseQuery(req, res) {
     });
 }
 
-function saveCourse(req, res) {
+function create(req, res) {
   const parsedData = JSON.parse(req.body.courseToSave);
   const user = parsedData.user;
   const courseId = parsedData.courseId;
@@ -65,7 +65,7 @@ function saveCourse(req, res) {
   })
   newCourse.save(function (err) {
     if (!err) {
-      res.render('courses')
+      res.redirect('search')
     }
   })
 }
@@ -73,10 +73,23 @@ function saveCourse(req, res) {
 
 
 function courseDetails(req, res) {
-  console.log('who dat')
-//   Course.find({
-//     user: user
-//   }).then(reponse => {
+  const parsedData = JSON.parse(req.body.courseDetails);
+  const courseId = parsedData.courseId;
 
-//   })
- }
+  axios.get(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${courseId}&key=${CADDIE_API_KEY}`)
+    .then(response => {
+      const details = {
+        name: response.data.result.name,
+        address: response.data.result.formatted_address,
+        phoneNumber: response.data.result.formatted_phone_number,
+        photo: response.data.result.photos[0]
+      }
+
+      res.render('details', {
+        courses: details
+      })
+    })
+    .catch(error => {
+      console.log(error);
+    })
+}

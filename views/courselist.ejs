@@ -14,8 +14,8 @@
             <td><%=course.name %></td>
             <td><%=course.bestScore %></td>
             <td>
-                <form action="/courses/<%= course.id %>/show" method="GET">
-                    <button type="submit" value="<%= JSON.stringify({courseId: course.id, user: user}) %>"
+                <form action="/courses/<%= course.id %>/show" method="POST">
+                    <button type="submit" value="<%= JSON.stringify({courseId: course.courseId, user: user}) %>"
                         name="courseDetails">Details</button>
                 </form>
             </td>

@@ -1,7 +1,18 @@
 <%- include('./partials/base') %>
-
+<h1>Details</h1>
+<h2><%=courses.photo %></h2>
+<br>
+<br>
 <label>Course:
-    <input type="text" value="<%= %>">
+    <h2><%= courses.name %></h2>
+</label><br>
+<br>
+<label>Address:
+    <h2><%=courses.address %></h2>
+</label><br>
+<br>
+<label>Phone Number:
+    <h2><%= courses.phoneNumber %></h2>
 </label>
 
 <%- include('./partials/footer') %>
