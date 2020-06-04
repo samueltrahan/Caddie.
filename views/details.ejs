@@ -1,19 +1,22 @@
 <%- include('./partials/base') %>
+
 <h1 id="details-heading">Course Details</h1>
 <img src="<%= details.map %>">
 <br>
 <br>
-<label class="details">Course:
-    <h2 class="details"><%= details.name %></h2>
-</label><br>
-<br>
-<label class="details">Address:
-    <h2 class="details"><%=details.address %></h2>
-</label><br>
-<br>
-<label class="details">Phone Number:
-    <h2 class="details"><%= details.phoneNumber %></h2>
-</label>
+<div id="course-details">
+    <label class="details">Course:
+        <h2 class="details"><%= details.name %></h2>
+    </label><br>
+    <br>
+    <label class="details">Address:
+        <h2 class="details"><%=details.address %></h2>
+    </label><br>
+    <br>
+    <label class="details">Phone Number:
+        <h2 class="details"><%= details.phoneNumber %></h2>
+    </label>
+</div>
 
 <br><br>
 

@@ -15,18 +15,20 @@
 
         <% details.forEach(function(course) { %>
         <tr>
-            <div id="course-list">
+            <div class="course-list">
                 <td><%=course.name %></td>
                 <td><%=course.bestScore %></td>
                 <td>
                     <form action="/courses/<%= course.id %>/details" method="POST">
-                        <button type="submit" value="<%= JSON.stringify({courseId: course.courseId, user: user}) %>"
+                        <button class="btn btn-warning" style="background-color: gold;" type="submit"
+                            value="<%= JSON.stringify({courseId: course.courseId, user: user}) %>"
                             name="courseDetails">Details</button>
                     </form>
                 </td>
                 <td>
                     <form action="/courses/<%= course.id%>?_method=DELETE" method="POST">
-                        <button type="submit" value="<%= JSON.stringify({courseId: course.courseId, user: user}) %>"
+                        <button class='btn btn-danger' type="submit"
+                            value="<%= JSON.stringify({courseId: course.courseId, user: user}) %>"
                             name="deleteCourse">X</button>
                     </form>
                 </td>
