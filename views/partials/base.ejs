@@ -31,10 +31,7 @@
             <% } %>
             <a class="navbar-brand" href="profile.">
                 <% if (user) {%>
-                Hello <%= user.name %>
                 <img src=<%=user.avatar%> class="profilePic">
-                <%}else{%>
-                Hello please log in
                 <%} %>
     </ul>
 </nav>
