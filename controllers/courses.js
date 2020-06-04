@@ -85,7 +85,7 @@ function courseDetails(req, res) {
         name: response.data.result.name,
         address: response.data.result.formatted_address,
         phoneNumber: response.data.result.formatted_phone_number,
-        photo: response.data.result.photos_reference
+        map: response.data.result.photos
       }
       Course.findById(
         course,

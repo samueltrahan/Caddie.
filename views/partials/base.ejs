@@ -32,10 +32,9 @@
                 <% } else { %>
                 <a href="/auth/google" class="nav-link">Login</a>
                 <% } %>
-                <a class="navbar-brand" href="profile.">
-                    <% if (user) {%>
-                    <img src=<%=user.avatar%> class="profilePic">
-                    <%} %>
+                <% if (user) {%>
+                <img src=<%=user.avatar%> class="profilePic">
+                <%} %>
         </ul>
 
     </div>

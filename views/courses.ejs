@@ -18,19 +18,22 @@
 
 <tbody>
     <% courses.forEach(function(course) { %>
-    <tr>
-        <td class="search-results"><%= course.name %></td><br>
-        <td class="search-results"><%= course.address %></td>
-        <td>
-            <form action="/courses/save" method="POST">
-                <button type="submit"
-                    value="<%= JSON.stringify({courseId: course.courseId, user: user, name: course.name}) %>"
-                    name="courseToSave">
-                    Favorite
-                </button>
-            </form>
-        </td>
-    </tr>
+    <div class="search-results">
+        <tr>
+            <td><%= course.name %></td><br>
+            <td><%= course.address %></td>
+            <td>
+                <form action="/courses/save" method="POST">
+                    <button id="favorite-btn" type="submit"
+                        value="<%= JSON.stringify({courseId: course.courseId, user: user, name: course.name}) %>"
+                        name="courseToSave">
+                        Favorite
+                    </button>
+                    <hr class="line-break">
+                </form>
+            </td>
+        </tr>
+    </div>
     <% }) %>
 </tbody>
 
