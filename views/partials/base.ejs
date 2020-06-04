@@ -13,27 +13,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caddie</title>
 </head>
-<nav class="nav justify-content-end" style="background-color: rgb(255, 215, 0)">
-    <ul class="nav nav-pills" style="height: 75px">
-        <% if (user) { %>
-        <li class="nav-item">
-            <a href="/courses/search" class="nav-link" class="mr-4">Search</a>
-        </li>
-        <li class="nav-item">
-            <a href="/courses/courselist" class="nav-link">My courses</a>
-        </li>
-        <li class="nav-item">
-            <a href="/logout" class="nav-link" )">Log Out</a>
-        </li>
-        <li class="nav-item">
-            <% } else { %>
-            <a href="/auth/google" class="nav-link">Login</a>
-            <% } %>
-            <a class="navbar-brand" href="profile.">
-                <% if (user) {%>
-                <img src=<%=user.avatar%> class="profilePic">
-                <%} %>
-    </ul>
+<nav style="background-color: rgb(255, 215, 0)">
+    <img class="caddie-logo" src="/images/caddie-logo.png">
+    <h2 id="partial-heading">Caddie</h2>
+    <div class="nav justify-content-end">
+        <ul class="nav nav-pills" style="height: 75px">
+            <% if (user) { %>
+            <li class="nav-item">
+                <a href="/courses/search" class="nav-link" class="mr-4">Search</a>
+            </li>
+            <li class="nav-item">
+                <a href="/courses/courselist" class="nav-link">My courses</a>
+            </li>
+            <li class="nav-item">
+                <a href="/logout" class="nav-link" )">Log Out</a>
+            </li>
+            <li class="nav-item">
+                <% } else { %>
+                <a href="/auth/google" class="nav-link">Login</a>
+                <% } %>
+                <a class="navbar-brand" href="profile.">
+                    <% if (user) {%>
+                    <img src=<%=user.avatar%> class="profilePic">
+                    <%} %>
+        </ul>
+
+    </div>
 </nav>
 
 <body id="background">
