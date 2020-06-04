@@ -17,14 +17,16 @@ function index(req, res) {
     user: req.user.id
   }, function (err, details) {
     res.render('courselist', {
-      details
+      details,
+      user: req.user
     })
   })
 }
 
 function search(req, res) {
   res.render("courses", {
-    courses: null
+    courses: null,
+    user: req.user
   });
 }
 
@@ -45,6 +47,7 @@ function courseQuery(req, res) {
       });
       res.render("courses", {
         courses: placeNames,
+        user:req.user
       });
     })
     .catch((error) => {
@@ -93,7 +96,8 @@ function courseDetails(req, res) {
           res.render('details', {
             details: details,
             course: course,
-            courses: results
+            courses: results,
+            user: req.user
           })
         });
     })

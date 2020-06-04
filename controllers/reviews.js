@@ -12,11 +12,11 @@ function create(req, res) {
     Course.findById(req.params.id, function (err, course) {
         course.reviews.push(req.body);
         course.save(function (err, reviews) {
-            console.log(reviews);
             res.render('details', {
                 courses: reviews,
                 details,
-                course: courseId
+                course: courseId,
+                user: req.user
             })
         })
     })

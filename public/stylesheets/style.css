@@ -19,6 +19,17 @@
   font-family: 'Bebas Neue', cursive;
 }
 
+.profilePic {
+  border-radius: 50%;
+  width: 70px;
+}
+
+.profilePic-landing {
+  border-radius: 50%;
+  width: 70px;
+  
+}
+
 
 body>nav {
   grid-area: nav;

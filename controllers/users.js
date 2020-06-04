@@ -22,6 +22,7 @@ function index(req, res, next) {
         user: req.user,
         name: req.query.name,
         sortKey,
+        user: req.user
       });
     });
 }

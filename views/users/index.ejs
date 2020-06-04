@@ -26,6 +26,12 @@
       <a href="/auth/google" class="nav-link">Login</a>
       <% } %>
     </li>
+    <a class="navbar-brand" href="profile."><% if (user) {%>
+      Hello <%= user.name %>
+      <img src=<%=user.avatar%> class="profilePic-landing">
+      <%}else{%>
+      Hello please log in
+      <%} %>
   </ul>
 </nav>
 
