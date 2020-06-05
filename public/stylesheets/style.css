@@ -107,7 +107,6 @@ h1 {
   background-color: gold;
   color: cornflowerblue;
   font-weight: bold;
-  margin-top: 15px;
 }
 
 table {
@@ -166,8 +165,6 @@ table td {
 #user-reviews {
   text-align: -webkit-center;
 }
-
-.course-list {}
 
 #course-details {
   text-align: center;
