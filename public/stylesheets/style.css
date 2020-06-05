@@ -36,11 +36,12 @@
 
 .nav-item {
   text-shadow: 1px 1px 1px black;
+  font-size: 30px;
+  object-fit: contain;
 }
 
 #partial-heading {
-  position: relative;
-  right: 750px;
+  text-align: center;
   color: cornflowerblue;
   font-family: "Bebas Neue", cursive;
   font-size: 50px;
@@ -48,19 +49,17 @@
   text-shadow: 2px 2px 2px black;
 }
 
-.caddie-logo {
-  display: grid;
-  justify-content: start;
-  align-content: center;
-  width: 250px;
+nav>img {
+  width: 200px;
+  object-fit: contain;
+
 }
 
-body > nav {
-  display: grid;
-  min-height: 100px;
-  grid-auto-flow: column;
-  background-color: gold;
-  grid-gap: 20px;
+body>nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
 }
 
 h1 {
@@ -168,8 +167,7 @@ table td {
   text-align: -webkit-center;
 }
 
-.course-list {
-}
+.course-list {}
 
 #course-details {
   text-align: center;
