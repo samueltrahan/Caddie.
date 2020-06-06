@@ -2,6 +2,7 @@ const Course = require('../models/course');
 
 module.exports = {
     create,
+    addScore,
 }
 
 
@@ -21,4 +22,21 @@ function create(req, res) {
         })
     })
 
+}
+
+function addScore(req, res) {
+    const detailsAndCourse = JSON.parse(req.body.detailsAndCourse)
+    const details = detailsAndCourse.details;
+    const courseId = detailsAndCourse.course;
+    Course.findById(req.params.id, function(err, course) {
+        course.save(function(err, score) {
+            console.log(score);
+            res.render('details', {
+                bestScore: score,
+                details,
+                course: courseId,
+                user: req.user
+            })
+        })
+    })
 }

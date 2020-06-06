@@ -2,6 +2,16 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+const scoreSchema = new Schema({
+    score: {
+        type: Number,
+        min: 50,
+        max: 130,
+    }
+}, {
+    timestamps: true
+})
+
 const reviewSchema = new Schema({
     content: String,
     rating: {
@@ -25,11 +35,7 @@ const courseSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    bestScore: {
-        type: Number,
-        min: 50,
-        max: 130
-    },
+    score: [scoreSchema],
     reviews: [reviewSchema]
 }, {
     timestamps: true

@@ -4,6 +4,7 @@ const reviewCtrl = require('../controllers/reviews');
 
 
 router.post('/courses/:id/reviews', isLoggedIn, reviewCtrl.create);
+router.post('/courses/:id/scores', isLoggedIn, reviewCtrl.addScore);
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {

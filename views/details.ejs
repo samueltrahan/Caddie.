@@ -15,9 +15,15 @@
     <label class="details">Phone Number:
         <h2><a href="<%= details.phoneNumber %>" class="details" role="button"></a></h2>
     </label>
-
 </div> <br><br>
-
+<div>
+    <form action="/courses/<%= course %>/scores" method="GET">
+        <label> Best Score:
+            <input type="text" name="bestScore">
+            <button type="submit">Add Score</button>
+        </label>
+    </form>
+</div>
 
 <%- include('./reviews') %>
 
