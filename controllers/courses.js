@@ -60,15 +60,6 @@ function create(req, res) {
   const user = parsedData.user;
   const courseId = parsedData.courseId;
   const courseName = parsedData.name;
-  // Course.findById(course, function (err, score) {
-  //   let num = 0;
-  //   score.forEach(function (number) {
-  //     if (number > num) {
-  //       num = number;
-  //     }
-  //   })
-  //   return num;
-  // })
 
   const newCourse = new Course({
     scores: score,

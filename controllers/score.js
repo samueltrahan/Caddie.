@@ -4,13 +4,14 @@ const Course = require('../models/course');
 module.exports = {
     edit: editScore,
     addScore,
-    update
+    update,
+    delete: deleteScore
 }
 
 function editScore(req, res) {
-    const editScore = JSON.parse(req.body.editScore);
-    const details = editScore.details;
-    const courseId = editScore.course;
+    const detailsAndCourse = JSON.parse(req.body.detailsAndCourse)
+    const details = detailsAndCourse.details;
+    const courseId = detailsAndCourse.course;
     Course.findById(req.params.id, function (err, score) {
         res.render('score/update', {
             courses: score,
@@ -39,7 +40,15 @@ function addScore(req, res) {
 }
 
 function update(req, res) {
+    console.log(req.params.id);
+    console.log(req.body);
     Course.findByIdAndUpdate(req.params.id, req.body, function (err, score) {
-        res.redirect('score/scores');
+        res.redirect('details');
+    })
+}
+
+function deleteScore(req, res) {
+    Course.findByIdAndDelete(req.params.id, function (err, score) {
+        res.redirect('details');
     })
 }
