@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const scoreSchema = new Schema({
-    score: {
+    bestScore: {
         type: Number,
         min: 50,
         max: 130,

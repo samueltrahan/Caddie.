@@ -13,6 +13,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 const coursesRouter = require('./routes/courses');
 const reviewRouter = require('./routes/reviews');
+const scoreRouter = require('./routes/score');
 var usersRouter = require('./routes/users');
 
 
@@ -46,6 +47,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/courses', coursesRouter);
+app.use('/', scoreRouter);
 app.use('/', reviewRouter);
 
 // catch 404 and forward to error handler

@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-const reviewCtrl = require('../controllers/reviews');
+const scoreCtrl = require('../controllers/score');
 
 
-router.post('/courses/:id/reviews', isLoggedIn, reviewCtrl.create);
 
+router.post('/courses/:id/scores', isLoggedIn, scoreCtrl.addScore);
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
