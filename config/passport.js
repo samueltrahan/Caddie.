@@ -19,11 +19,13 @@ function(accessToken, refeshToken, profile, cb) {
             } else {
                 return cb(null, user);
             }
+            } else {
             var newUser = new User({
                 name: profile.displayName,
                 email: profile.emails[0].value,
                 avatar: profile.photos[0].value,
-                googleId: profile.id
+                googleId: profile.id,
+                oAuthProvider: "Google"
             });
             newUser.save(function(err) {
                 if(err) return cb(err);
@@ -31,7 +33,9 @@ function(accessToken, refeshToken, profile, cb) {
             })
         }
     })
-}));
+    }
+    )
+);
 
 passport.serializeUser(function(user, done) {
     done(null, user.id);

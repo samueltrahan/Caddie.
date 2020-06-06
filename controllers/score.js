@@ -40,10 +40,16 @@ function addScore(req, res) {
 }
 
 function update(req, res) {
-    console.log(req.params.id);
-    console.log(req.body);
+    const detailsAndCourse = JSON.parse(req.body.detailsAndCourse)
+    const details = detailsAndCourse.details;
+    const courseId = detailsAndCourse.course;
     Course.findByIdAndUpdate(req.params.id, req.body, function (err, score) {
-        res.redirect('details');
+        res.render('details', {
+            courses: score,
+            details,
+            course: courseId,
+            user: req.user
+        });
     })
 }
 

@@ -156,9 +156,9 @@ table td {
 #review-area {
   width: 800px;
   height: 200px;
-  display: table;
-  position: relative;
-  left: 550px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #review-rating {
@@ -172,4 +172,12 @@ table td {
 
 #course-details {
   text-align: center;
+}
+
+#add-score {
+  text-align: center;
+}
+
+#user-scores {
+  text-align: -webkit-center;
 }

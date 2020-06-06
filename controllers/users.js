@@ -5,12 +5,9 @@ module.exports = {
 };
 
 function index(req, res, next) {
-  console.log(req.query);
-  let modelQuery = req.query.name
-    ? {
-        name: new RegExp(req.query.name, "i"),
-      }
-    : {};
+  let modelQuery = req.query.name ? {
+    name: new RegExp(req.query.name, "i"),
+  } : {};
   let sortKey = req.query.sort || "name";
   User.find(modelQuery)
     .sort(sortKey)

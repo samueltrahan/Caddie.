@@ -62,7 +62,6 @@ function create(req, res) {
   const courseName = parsedData.name;
 
   const newCourse = new Course({
-    scores: score,
     courseId: courseId,
     user: user,
     name: courseName
