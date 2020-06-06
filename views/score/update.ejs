@@ -1,0 +1,15 @@
+<%- include('../partials/base') %>
+
+<h1>Update Score:</h1>
+
+<% courses.score.forEach(function(score) { %>
+<form action="/courses/update/<%= course %>" method="POST">
+    <label>Score:
+        <input type="text" value="<%= score.bestScore %>" name="score">
+    </label>
+    <input type="submit" value="Update Score">
+</form>
+<%}) %>
+
+
+<%- include('../partials/footer') %>

@@ -47,7 +47,7 @@ function courseQuery(req, res) {
       });
       res.render("courses", {
         courses: placeNames,
-        user:req.user
+        user: req.user
       });
     })
     .catch((error) => {
@@ -60,8 +60,18 @@ function create(req, res) {
   const user = parsedData.user;
   const courseId = parsedData.courseId;
   const courseName = parsedData.name;
+  // Course.findById(course, function (err, score) {
+  //   let num = 0;
+  //   score.forEach(function (number) {
+  //     if (number > num) {
+  //       num = number;
+  //     }
+  //   })
+  //   return num;
+  // })
 
   const newCourse = new Course({
+    scores: score,
     courseId: courseId,
     user: user,
     name: courseName

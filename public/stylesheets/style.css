@@ -102,6 +102,10 @@ h1 {
   text-align: center;
 }
 
+#name-heading {
+  text-align: center;
+}
+
 #favorite-btn {
   display: inline;
   background-color: gold;

@@ -22,4 +22,3 @@ function create(req, res) {
     })
 
 }
-

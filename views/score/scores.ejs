@@ -1,0 +1,28 @@
+<div>
+    <form action="/courses/<%= course %>/scores" method="POST">
+        <label> Best Score:
+            <input type="text" name="bestScore">
+            <button type="submit" value="<%= JSON.stringify({details, course}) %>" name="detailsAndCourse">Add
+                Score</button>
+        </label>
+    </form>
+</div>
+<div id="user-scores">
+    <% if(courses.score) { %>
+    <table>
+        <% courses.score.forEach(function(score) { %>
+        <tr>
+            <td><%=score.bestScore %></td>
+            <td><%=score.createdAt.toLocaleDateString() %>
+                <form action="/courses/<%= course %>/edit" method="GET">
+                    <button type="submit" value="<%= JSON.stringify({details, course}) %>"
+                        name="editScore">Update Score</button>
+                </form>
+            </td>
+        </tr>
+        <% }) %>
+    </table>
+    <%} else { %>
+    <h5>No Scores Yet</h5>
+    <% } %>
+</div>

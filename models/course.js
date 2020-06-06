@@ -7,6 +7,10 @@ const scoreSchema = new Schema({
         type: Number,
         min: 50,
         max: 130,
+    },
+    played: {
+        type: Boolean,
+        default: false,
     }
 }, {
     timestamps: true
