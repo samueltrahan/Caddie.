@@ -1,16 +1,21 @@
 <%- include('../partials/base') %>
-
-<h1>Update Score:</h1>
+<div id="update-score">
+    <h1>Update Score:</h1>
+</div>
 
 <% courses.score.forEach(function(score) { %>
-<form action="/courses/update/<%= course %>" method="POST">
-    <label>Score:
-        <h5 id="score-date"><%= score.createdAt.toLocaleDateString() %></h5>
-        <input type="text" value="<%= score.bestScore %>" name="score">
-        <button type="submit" value="<%= JSON.stringify({details, course}) %>" name="detailsAndCourse">Update
-            Score</button>
-    </label>
-</form>
+<div id="update-score-body">
+    <form action="/courses/update/<%= course %>" method="POST">
+        <label id="score-update">Score:
+            <h5 id="score-date"><%= score.createdAt.toLocaleDateString() %></h5>
+            <input type="text" value="<%= score.bestScore %>" name="score">
+            <button class="btn btn-warning" type="submit" value="<%= JSON.stringify({details, course}) %>"
+                name="detailsAndCourse">Update
+                Score</button>
+        </label>
+        <hr class="line-break">
+    </form>
+</div>
 <%}) %>
 
 

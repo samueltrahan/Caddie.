@@ -8,25 +8,29 @@
         </label>
     </form>
 </div>
+<hr style="border: 2px solid gold;">
 <div id="user-scores">
     <% if(courses.score) { %>
     <table>
         <% courses.score.forEach(function(score) { %>
-        <tr>
-            <td><%=score.bestScore %></td>
-            <td><%=score.createdAt.toLocaleDateString() %></td>
-            <td>
-                <form action="/courses/<%= course %>/edit" method="POST">
-                    <button type="submit" value="<%= JSON.stringify({details, course}) %>"
-                        name="detailsAndCourse">Update Score</button>
-                </form>
-            </td>
-            <td>
-                <form action="/courses/<%= course.id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                </form>
-            </td>
-        </tr>
+        <div>
+            <tr>
+                <td><%=score.bestScore %></td>
+                <td><%=score.createdAt.toLocaleDateString() %></td>
+                <td>
+                    <form action="/courses/<%= course %>/edit" method="POST">
+                        <button class="btn btn-warning" type="submit" value="<%= JSON.stringify({details, course}) %>"
+                            name="detailsAndCourse">Update Score</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/courses/<%= course.score %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger" type="submit">X</button>
+                    </form>
+                </td>
+            </tr>
+
+        </div>
         <% }) %>
     </table>
     <%} else { %>

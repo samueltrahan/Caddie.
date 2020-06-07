@@ -164,6 +164,7 @@ table td {
 #review-rating {
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 #user-reviews {
@@ -172,6 +173,10 @@ table td {
 
 #course-details {
   text-align: center;
+}
+
+.course-list {
+  text-align: -webkit-center;
 }
 
 #add-score {
@@ -190,4 +195,70 @@ table td {
 #score-date {
   color: white;
   text-shadow: 2px 2px 2px black;
+}
+
+#update-score {
+  text-align: center;
+  margin-bottom: 20px;
+  color: gold;
+  text-shadow: 2px 2px 2px black;
+  font-size: 50px;
+}
+
+#score-update {
+  font-size: 25px;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+
+#update-score-body {
+  text-align: -webkit-center;
+}
+
+@media only screen and (max-width: 845px) {
+  .profilePic {
+    border-radius: 50%;
+    width: 70px;
+  }
+
+  .profilePic-landing {
+    border-radius: 50%;
+    width: 70px;
+  }
+
+  #avatar-landing {
+    display: flex;
+    align-items: right;
+    color: black;
+    text-shadow: 2px 2px 2px green;
+  }
+
+  .nav-item {
+    text-shadow: 1px 1px 1px black;
+    font-size: 30px;
+    object-fit: contain;
+  }
+
+  #partial-heading {
+    text-align: center;
+    color: cornflowerblue;
+    font-family: "Bebas Neue", cursive;
+    font-size: 50px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px black;
+    display: hidden;
+  }
+
+  nav>img {
+    width: 200px;
+    object-fit: contain;
+
+  }
+
+  body>nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
 }
