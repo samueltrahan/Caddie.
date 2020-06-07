@@ -3,7 +3,7 @@
 <h1>Update Score:</h1>
 
 <% courses.score.forEach(function(score) { %>
-<form action="/courses/update/<%= course %>?_method=PUT" method="POST">
+<form action="/courses/update/<%= course %>" method="POST">
     <label>Score:
         <h5 id="score-date"><%= score.createdAt.toLocaleDateString() %></h5>
         <input type="text" value="<%= score.bestScore %>" name="score">

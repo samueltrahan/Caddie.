@@ -13,6 +13,7 @@ By: Samuel Trahan
 Caddie is an app that allows you to easily search and favorite golf courses.  You can look for course information on courses you are interested in playing, and keep track of your best score on courses you've already played.
 
 ----
+# Technology Used
 
 ![](/public/images/tech.png)
 

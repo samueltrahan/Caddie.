@@ -39,25 +39,25 @@ function addScore(req, res) {
     })
 }
 
-// function update(req, res) {
-//     const detailsAndCourse = JSON.parse(req.body.detailsAndCourse)
-//     const details = detailsAndCourse.details;
-//     const courseId = detailsAndCourse.course;
-//     Course.findByIdAndUpdate(req.params.id, req.body, function (err, score) {
-//         res.render('details', {
-//             courses: score,
-//             details,
-//             course: courseId,
-//             user: req.user
-//         });
-//     })
-//}
-
 function update(req, res) {
+    const detailsAndCourse = JSON.parse(req.body.detailsAndCourse)
+    const details = detailsAndCourse.details;
+    const courseId = detailsAndCourse.course;
     Course.findByIdAndUpdate(req.params.id, req.body, function (err, score) {
-        res.redirect('details');
+        res.render('details', {
+            courses: score,
+            details,
+            course: courseId,
+            user: req.user
+        });
     })
 }
+
+// function update(req, res) {
+//     Course.findByIdAndUpdate(req.params.id, req.body, function (err, score) {
+//         res.redirect('details');
+//     })
+// }
 
 function deleteScore(req, res) {
     Course.findByIdAndDelete(req.params.id, function (err, score) {
