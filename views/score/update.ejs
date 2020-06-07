@@ -5,12 +5,12 @@
 
 <% courses.score.forEach(function(score) { %>
 <div id="update-score-body">
-    <form action="/courses/update/<%= course %>?_method=PUT" method="POST">
+    <form action="/courses/<%= course %>/update?_method=PUT" method="POST">
         <label id="score-update">Score:
             <h5 id="score-date"><%= score.createdAt.toLocaleDateString() %></h5>
             <input type="text" value="<%= score.bestScore %>" name="score">
-            <button class="btn btn-warning" type="submit" value="<%= JSON.stringify({details, course}) %>"
-                name="detailsAndCourse">Update
+            <button class="btn btn-warning" style="background-color: gold;" type="submit"
+                value="<%= JSON.stringify({details, course}) %>" name="detailsAndCourse">Update
                 Score</button>
         </label>
         <hr style="border: 2px solid gold;">

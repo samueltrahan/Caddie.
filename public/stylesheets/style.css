@@ -238,9 +238,17 @@ table td {
   font-size: 25px;
 }
 
+#website-btn:hover {
+  color: white;
+}
+
 #phone-number {
   color: gold;
   font-size: 25px;
+}
+
+#phone-number:hover {
+  color: white;
 }
 
 @media only screen and (max-width: 845px) {

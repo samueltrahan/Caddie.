@@ -18,7 +18,7 @@
 <form id="add-review-form" method="POST" action="/courses/<%= course %>/reviews">
     <textarea id="review-area" name="content"></textarea>
     <div id="review-rating">
-        <select name="rating" class="btn btn-warning dropdown-toggle">
+        <select name="rating" class="btn btn-warning dropdown-toggle" style="background-color: gold;">
             <label>Rating:</label>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -26,7 +26,7 @@
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-        <button class="btn btn-warning" type="submit" value="<%= JSON.stringify({details, course}) %>"
-            name="detailsAndCourse">Add Review</button>
+        <button class="btn btn-warning" style="background-color: gold;" type="submit"
+            value="<%= JSON.stringify({details, course}) %>" name="detailsAndCourse">Add Review</button>
     </div>
 </form>
