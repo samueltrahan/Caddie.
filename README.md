@@ -32,7 +32,12 @@ This project was deployed using Heroku and can be found [here](https://caddie-go
 # Screenshots
 
 
-
+----
+# Future Improvements
+- Make a more in depth scoring system.
+- Be able to see others golf courses and scores.
+- add picture of the golf courses to the details page.
+- add a map feature that shows the user where the course is on a map.
 
 ----
 # Credits

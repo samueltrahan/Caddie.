@@ -23,7 +23,7 @@
     </li>
     <li class="nav-item">
       <% } else { %>
-      <a href="/auth/google" class="nav-link">Login</a>
+      <a id="login" href="/auth/google" class="nav-link"> Login</a>
       <% } %>
     </li>
   </ul>
@@ -31,8 +31,6 @@
     <% if (user) {%>
     Hello <%= user.name %>
     <img src=<%=user.avatar%> class="profilePic-landing">
-    <%}else{%>
-    Hello please log in
     <%} %>
   </div>
 </nav>

@@ -6,14 +6,28 @@
   background-size: cover;
 }
 
+#login {
+  color: gold;
+  text-shadow: 4px 4px 4px black;
+  font-size: 70px;
+  margin-top: 100px;
+  position: fixed;
+  top: 50%;
+  left: 46%;
+  font-family: "Bebas Neue", cursive;
+}
+
+#login:hover {
+  color: white;
+}
+
 .heading {
   color: gold;
   text-shadow: 4px 4px 4px black;
   font-size: 170px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 200px;
+  position: fixed;
+  top: 30%;
+  left: 37%;
   font-family: "Bebas Neue", cursive;
 }
 

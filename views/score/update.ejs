@@ -5,7 +5,7 @@
 
 <% courses.score.forEach(function(score) { %>
 <div id="update-score-body">
-    <form action="/courses/update/<%= course %>" method="POST">
+    <form action="/courses/update/<%= course %>?_method=PUT" method="POST">
         <label id="score-update">Score:
             <h5 id="score-date"><%= score.createdAt.toLocaleDateString() %></h5>
             <input type="text" value="<%= score.bestScore %>" name="score">
