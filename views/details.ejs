@@ -6,20 +6,25 @@
 <div id="course-details">
     <label class="details">Course:
         <h2 class="details"><%= details.name %></h2>
-    </label><br>
+    </label>
+    <hr class="line-break">
+    <br>
     <br>
     <label class="details">Address:
         <h2 class="details"><%=details.address %></h2>
-    </label><br>
+    </label>
+    <hr class="line-break">
+    <br>
     <br>
     <label class="details">Phone Number:
         <h2><%= details.phoneNumber %></h2>
     </label>
+    <hr class="line-break">
 </div> <br><br>
 
 
 <%- include('./score/scores') %>
-
+<hr class="line-break">
 <%- include('./reviews') %>
 
 <%- include('./partials/footer') %>

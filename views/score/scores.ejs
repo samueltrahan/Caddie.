@@ -1,6 +1,7 @@
 <div id="add-score">
     <form action="/courses/<%= course %>/scores" method="POST">
-        <label> Score:
+        <h3 id="score-heading">Score:</h3>
+        <label>
             <input type="text" name="bestScore">
             <button type="submit" value="<%= JSON.stringify({details, course}) %>" name="detailsAndCourse">Add
                 Score</button>

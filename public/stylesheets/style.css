@@ -181,3 +181,13 @@ table td {
 #user-scores {
   text-align: -webkit-center;
 }
+
+#score-heading {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+
+#score-date {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
