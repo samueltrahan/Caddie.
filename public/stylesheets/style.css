@@ -102,6 +102,10 @@ h1 {
   text-align: center;
 }
 
+#search-list {
+  margin-top: 10px;
+}
+
 #name-heading {
   text-align: center;
 }
