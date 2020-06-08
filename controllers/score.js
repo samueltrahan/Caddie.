@@ -16,7 +16,7 @@ function editScore(req, res) {
     const detailsAndCourse = JSON.parse(req.body.detailsAndCourse)
     const details = detailsAndCourse.details;
     const courseId = detailsAndCourse.course;
-    Course.findById(req.params.id, function (err, score) {
+    Course.findById(courseId, function (err, score) {
         res.render('score/update', {
             courses: score,
             course: courseId,
