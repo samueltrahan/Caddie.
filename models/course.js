@@ -2,19 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const scoreSchema = new Schema({
-    bestScore: {
-        type: Number,
-        min: 50,
-        max: 130,
-    },
-    played: {
-        type: Boolean,
-        default: false,
-    }
-}, {
-    timestamps: true
-})
+
 
 const reviewSchema = new Schema({
     content: String,
@@ -39,10 +27,11 @@ const courseSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    score: [scoreSchema],
+    scores: [], 
     reviews: [reviewSchema]
 }, {
     timestamps: true
 })
 
-module.exports = mongoose.model('Courses', courseSchema);
+module.exports =  mongoose.model('Courses', courseSchema)
+ 

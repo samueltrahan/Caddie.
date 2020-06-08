@@ -1,6 +1,6 @@
 ![](public/images/caddie-head.png)
 # Caddie
-Date: 6/5/2020
+Date: 6/8/2020
 
 By: Samuel Trahan
 
@@ -31,7 +31,11 @@ This project was deployed using Heroku and can be found [here](https://caddie-go
 ----
 # Screenshots
 
-
+![](https://i.imgur.com/z5l8G8f.png)
+![](https://i.imgur.com/IIRs3VC.png)
+![](https://i.imgur.com/6Th1rmL.png)
+![](https://i.imgur.com/L5mpux7.png)
+![](https://i.imgur.com/wkLMECl.png)
 ----
 # Future Improvements
 - Make a more in depth scoring system.
