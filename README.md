@@ -10,7 +10,7 @@ By: Samuel Trahan
 
 ## Description
 
-Caddie is an app that allows you to easily search and favorite golf courses.  You can look for course information on courses you are interested in playing, and keep track of your best score on courses you've already played.
+Caddie is an app that allows you to easily search and favorite golf courses.  Adding the courses to your course list allows you to keep track of golf courses you've played or would like to play one day.  Check out the details of the each course on your course list to see tee times on their website.
 
 ----
 # Technology Used
@@ -21,7 +21,7 @@ Caddie is an app that allows you to easily search and favorite golf courses.  Yo
 
 # Getting Started
 
-Login with your Google account to get started and search for a course.  See a course you want to play, or would love to play one day?  Favorite the course and add it to the list of courses that you've played before.
+Login with your Google account to get started and search for a course.  See a course you want to play, or would love to play one day?  Favorite the course and call or visit the courses website to set up a tee time!!
 
 A Trello board that was used during the development of this app can be found [here](https://trello.com/b/DVxH1eaR/caddie)
 

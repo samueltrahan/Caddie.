@@ -31,7 +31,6 @@ function addScore(req, res) {
     const details = detailsAndCourse.details;
     const courseId = detailsAndCourse.course;
     Course.findById(req.params.id, function (err, course) {
-
         course.scores.push({
             bestScore: req.body.bestScore,
             createdAt: new Date(),

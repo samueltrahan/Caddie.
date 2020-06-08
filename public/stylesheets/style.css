@@ -63,13 +63,12 @@
   text-shadow: 2px 2px 2px black;
 }
 
-nav>img {
+nav > img {
   width: 200px;
   object-fit: contain;
-
 }
 
-body>nav {
+body > nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -285,13 +284,12 @@ table td {
     display: hidden;
   }
 
-  nav>img {
+  nav > img {
     width: 200px;
     object-fit: contain;
-
   }
 
-  body>nav {
+  body > nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
