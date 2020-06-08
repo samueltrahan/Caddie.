@@ -20,13 +20,6 @@ Caddie is an app that allows you to easily search and favorite golf courses. Add
 
 ![](/public/images/tech.png)
 
----
-
-### Additional Technologies
-
-Mongoose
-MongoDB
-
 # Getting Started
 
 Login with your Google account to get started and search for a course. See a course you want to play, or would love to play one day? Favorite the course and call or visit the courses website to set up a tee time!!
